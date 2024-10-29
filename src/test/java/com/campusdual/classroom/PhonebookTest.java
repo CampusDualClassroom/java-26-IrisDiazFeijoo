@@ -29,32 +29,32 @@ class PhonebookTest {
 
     @Test
     void testAddContactToPhonebook() {
-        Contact c = new Contact("Name","Sur Name", "111222333");
+        Contact c = new Contact("Name", "Sur Name", "111222333");
         Phonebook p = new Phonebook();
         int prevContactNumber = p.getData().size();
         p.addContact(c);
         int actContactNumber = p.getData().size();
-        assertEquals(prevContactNumber+1, actContactNumber);
+        assertEquals(prevContactNumber + 1, actContactNumber);
         assertEquals(c, p.getData().get(c.getCode()));
 
     }
 
     @Test
     void testRemoveContactFormPhonebook() {
-        Contact c = new Contact("Name","Sur Name", "111222333");
+        Contact c = new Contact("Name", "Sur Name", "111222333");
         Phonebook p = new Phonebook();
         p.addContact(c);
         int prevContactNumber = p.getData().size();
         p.deleteContact(c.getCode());
         int actContactNumber = p.getData().size();
-        assertEquals(prevContactNumber-1, actContactNumber);
+        assertEquals(prevContactNumber - 1, actContactNumber);
         assertNull(p.getData().get(c.getCode()));
     }
 
     @Test
     void testShowPhonebook() {
-        Contact c1 = new Contact("Name","Sur Name", "111222333");
-        Contact c2 = new Contact("Eman","Rus Eman", "333444555");
+        Contact c1 = new Contact("Name", "Sur Name", "111222333");
+        Contact c2 = new Contact("Eman", "Rus Eman", "333444555");
         Phonebook p = new Phonebook();
         p.addContact(c1);
         p.addContact(c2);
